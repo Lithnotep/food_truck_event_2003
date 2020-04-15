@@ -36,7 +36,20 @@ class FoodTruckTest < Minitest::Test
     assert_equal 55, @food_truck.inventory[@item1]
     assert_equal 12, @food_truck.inventory[@item2]
   end
-  
+
+  def test_potential_revenue
+    @food_truck1 = FoodTruck.new("Rocky Mountain Pies")
+    @food_truck2 = FoodTruck.new("Ba-Nom-a-Nom")
+    @food_truck3 = FoodTruck.new("Palisade Peach Shack")
+    @food_truck1.stock(@item1, 35)
+    @food_truck1.stock(@item2, 7)
+    @food_truck2.stock(@item4, 50)
+    @food_truck2.stock(@item3, 25)
+    @food_truck3.stock(@item1, 65)
+
+    assert_equal 148.75, @food_truck1.potential_revenue
+  end
+
 
 
 end
