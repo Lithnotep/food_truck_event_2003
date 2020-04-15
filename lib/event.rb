@@ -22,4 +22,5 @@ class Event
     @food_trucks.find_all  {|truck| truck.inventory[item] > 0}
   end
 
+
 end
