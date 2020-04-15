@@ -25,10 +25,10 @@ class FoodTruck
   def potential_revenue
     revenue = 0
     @inventory.each do |item|
-      revenue += (item[0].price.to_f * item[1])
+      item_value = (item[0].price).chop.to_f
 
-    end
       binding.pry
+    end
     revenue
   end
 
